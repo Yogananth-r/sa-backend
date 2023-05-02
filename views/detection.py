@@ -201,3 +201,8 @@ def video_feed():
     if mode == 'object':
         model2 = yolo_detect(app.config['RESULT_FOLDER'], object_model)
     return Response(model2.detect_stream(vid_path),mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+@app.route('/sar')
+def sar_detection():
+    return render_template('sar.html')
